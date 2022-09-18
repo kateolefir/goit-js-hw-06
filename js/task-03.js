@@ -22,5 +22,12 @@ const images = [
   },
 ];
 
-const imgListEl = document.querySelector('.gallery');
+const imgListEl = document.querySelector('.gallery')
+const element = images
+  .map(function ({ url, alt }) {
+    return `<li class="gallery--item"><img class="gallery--img" src  = '${url}' alt = '${alt}' width="320"></li>`;
+  })
+  .join("");
+imgListEl.insertAdjacentHTML('afterbegin', element);
+
 
